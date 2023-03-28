@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+     fetch('/predict', {
+    method: 'POST'
+  })
+  .then(response => response.json())
+.then(data => {
+    // Set predicted genre
+    const predictionClassElement = document.getElementById('prediction-class');
+    predictionClassElement.innerText = data.prediction_class;
+    // Set image URL
+     const imgElement = document.getElementById('result-image');
+    imgElement.src = `../static/images/${data.prediction_class}/1.jpg`;
+    </script>
+</head>
+<body>
+<h1>นิสัยของคุณ</h1>
+
+<div class="login">
+<form action="/predict" method="post" >
+        <h4>รับสถาณการณ์กดดันได้ดี</h4>
+  <label>
+    <input type="radio" name="รับสถาณการณ์กดดันได้ดี" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="รับสถาณการณ์กดดันได้ดี" value="0">
+    ไม่ใช่
+  </label>
+                <h4>ช่างสังเกต</h4>
+  <label>
+    <input type="radio" name="ช่างสังเกต" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ช่างสังเกต" value="0">
+    ไม่ใช่
+  </label>
+                      <h4>ชอบทดลอง</h4>
+  <label>
+    <input type="radio" name="ชอบทดลอง" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ชอบทดลอง" value="0">
+    ไม่ใช่
+  </label>
+                      <h4>รักอิสระ</h4>
+  <label>
+    <input type="radio" name="รักอิสระ" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="รักอิสระ" value="0">
+    ไม่ใช่
+  </label>
+                      <h4>ละเอียดรอบคอบ</h4>
+  <label>
+    <input type="radio" name="ละเอียดรอบคอบ" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ละเอียดรอบคอบ" value="0">
+    ไม่ใช่
+  </label>
+                      <h4>มีความสนใจในความรู้รอบตัว</h4>
+  <label>
+    <input type="radio" name="มีความสนใจในความรู้รอบตัว" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="มีความสนใจในความรู้รอบตัว" value="0">
+    ไม่ใช่
+  </label>
+                      <h4>มีระเบียบวินัย</h4>
+  <label>
+    <input type="radio" name="มีระเบียบวินัย" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="มีระเบียบวินัย" value="0">
+    ไม่ใช่
+  </label>
+                      <h4>คนที่ทันคน</h4>
+  <label>
+    <input type="radio" name="คนที่ทันคน" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="คนที่ทันคน" value="0">
+    ไม่ใช่
+  </label>
+                      <h4>ชอบลองผิดลองถูก</h4>
+  <label>
+    <input type="radio" name="ชอบลองผิดลองถูก" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ชอบลองผิดลองถูก" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>ชอบความท้าทาย</h4>
+  <label>
+    <input type="radio" name="ชอบความท้าทาย" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ชอบความท้าทาย" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>รักสนุก</h4>
+  <label>
+    <input type="radio" name= "รักสนุก"  value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name= "รักสนุก" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>รักการอ่าน</h4>
+  <label>
+    <input type="radio" name="รักการอ่าน" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="รักการอ่าน" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>มีความเป็นตัวของตัวเองสูง</h4>
+  <label>
+    <input type="radio" name="มีความเป็นตัวของตัวเองสูง" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="มีความเป็นตัวของตัวเองสูง" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>ขี้ระแวง</h4>
+  <label>
+    <input type="radio" name="ขี้ระแวง" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ขี้ระแวง" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>เข้าสังคมเก่ง</h4>
+
+  <label>
+    <input type="radio" name="เข้าสังคมเก่ง" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="เข้าสังคมเก่ง" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>มีความหนักแน่นมั่นคง</h4>
+  <label>
+    <input type="radio" name="มีความหนักแน่นมั่นคง" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="มีความหนักแน่นมั่นคง" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>ไม่ชอบเที่ยวโลดโผน</h4>
+  <label>
+    <input type="radio" name="ไม่ชอบเที่ยวโลดโผน" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ไม่ชอบเที่ยวโลดโผน" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>ไม่ค่อยกล้าแสดงออก</h4>
+
+  <label>
+    <input type="radio" name="ไม่ค่อยกล้าแสดงออก" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ไม่ค่อยกล้าแสดงออก" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>ใจกว้าง</h4>
+  <label>
+    <input type="radio" name="ใจกว้าง" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ใจกว้าง" value="0">
+    ไม่ใช่
+  </label>
+                          <h4>ขี้เกรงใจคนอื่น</h4>
+  <label>
+    <input type="radio" name="ขี้เกรงใจคนอื่น" value="1">
+    ใช่
+  </label>
+  <label>
+    <input type="radio" name="ขี้เกรงใจคนอื่น" value="0">
+    ไม่ใช่
+  </label>
+      <button type="submit" class="btn btn-primary btn-block btn-large">ทำนาย!</button>
+    </form>
+
+<h2>Predicted genre: <span id="prediction-class">{{ prediction_class }}</span></h2>
+  <h2>Predicted Game Image:</h2>
+  <img src="../static/images/{{ prediction_class }}/1.jpg" alt="Image description" width="224" height="224">
+  <img src="../static/images/{{ prediction_class }}/2.jpg" alt="Image description" width="224" height="224">
+  <img src="../static/images/{{ prediction_class }}/3.jpg" alt="Image description" width="224" height="224">
+</div>
+</body>
+</html>
